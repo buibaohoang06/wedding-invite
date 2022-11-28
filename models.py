@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 class User(UserMixin, db.Model()):
     id = db.Column(db.Integer(), primary_key=True, unique=True, nullable=False)
     username = db.Column(db.String(), unique=True, nullable=False)
-    password = db.Column(db.String(), unique=False, nullable=False)
+    hashed_password = db.Column(db.String(), unique=False, nullable=False)
     fullname = db.Column(db.String(), unique=False, nullable=False)
     gender = db.Column(db.String(), unique=False, nullable=False)
     user_id = db.Column(db.String(), unique=True, nullable=False)
